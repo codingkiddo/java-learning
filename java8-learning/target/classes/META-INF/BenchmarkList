@@ -1,0 +1,4 @@
+JMH S 63 com.example.java.performance.ch01.StringBuilderStringBufferMain S 107 com.example.java.performance.ch01.jmh_generated.StringBuilderStringBufferMain_benchmarkStringBuffer_jmhTest S 21 benchmarkStringBuffer S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 63 com.example.java.performance.ch01.StringBuilderStringBufferMain S 108 com.example.java.performance.ch01.jmh_generated.StringBuilderStringBufferMain_benchmarkStringBuilder_jmhTest S 22 benchmarkStringBuilder S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 29 com.example.jvm.ref.BenchMark S 56 com.example.jvm.ref.jmh_generated.BenchMark_init_jmhTest S 4 init S 10 Throughput E A 1 1 1 E E E E E E E I 1 1 I 1 1 E E E E E E E E 
+JMH S 35 com.example.jvm.ref.JMHBenchmarking S 68 com.example.jvm.ref.jmh_generated.JMHBenchmarking_doExection_jmhTest S 10 doExection S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E E E E 
