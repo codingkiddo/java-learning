@@ -12,7 +12,7 @@ public class ListStringTest {
 		String s = "abc";
 		Object o = s;      // allowed
 		// strings.add(o); // not allowed
-		strings.add((String)o); // alowed
+		strings.add((String)o); // allowed
 		
 		System.out.println(strings);
 		
