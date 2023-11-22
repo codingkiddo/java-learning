@@ -1,6 +1,7 @@
 package com.example.generics;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -18,6 +19,16 @@ public class LowerBoundedWildcards {
 		System.out.println(integerList);
 		System.out.println(numberList);
 		System.out.println(objectList);
+		
+		if ( objectList.get(0) instanceof String ) {
+			String s = (String) objectList.get(0);
+			System.out.println(s);	
+		}
+		
+		Collections.copy(new ArrayList<Number>(), new ArrayList<Number>());
+		Collections.copy(new ArrayList<Number>(), new ArrayList<Integer>());
+		Collections.copy(new ArrayList<Object>(), new ArrayList<Number>());
+		Collections.copy(new ArrayList<Object>(), new ArrayList<Double>());
 		
 	}
 
