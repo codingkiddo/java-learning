@@ -1,0 +1,1 @@
+This example is the Spring/Hibernate application after migrating to a single module.
