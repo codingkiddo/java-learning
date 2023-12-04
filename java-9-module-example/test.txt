@@ -1,3 +1,0 @@
-jar --create --verbose --file com.example.hello.jar manifest.txt -C classes/com.example.hello . 
-
-jar cvfm  com.example.hello.jar manifest.txt  -C classes/com.example.hello .
