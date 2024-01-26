@@ -16,7 +16,7 @@ public class TestWildCardOne {
 		
 		// copy(dest, src)
 		copy(new ArrayList<Number>(), new ArrayList<Number>());
-		copy(new ArrayList<Number>(), new ArrayList<Integer>());
+//		copy(new ArrayList<Number>(), new ArrayList<Integer>());
 	}
 	
 	

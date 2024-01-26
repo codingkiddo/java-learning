@@ -26,11 +26,13 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>com.github.oshi</groupId>
-			<artifactId>oshi-core</artifactId>
-			<version>5.3.4</version>
-		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.oshi/oshi-core -->
+<dependency>
+    <groupId>com.github.oshi</groupId>
+    <artifactId>oshi-core</artifactId>
+    <version>6.4.11</version>
+</dependency>
+
 
 		<dependency>
 			<groupId>net.spy</groupId>
@@ -41,12 +43,12 @@
 		<dependency>
 		    <groupId>org.openjdk.jmh</groupId>
 		    <artifactId>jmh-core</artifactId>
-		    <version>1.36</version>
+		    <version>1.37</version>
 		</dependency>
 		<dependency>
 		    <groupId>org.openjdk.jmh</groupId>
 		    <artifactId>jmh-generator-annprocess</artifactId>
-		    <version>1.36</version>
+		    <version>1.37</version>
 		</dependency>
 
 	</dependencies>
