@@ -1,0 +1,48 @@
+apply plugin: 'java-library'
+apply plugin: 'maven-publish'
+apply plugin: 'me.champeau.gradle.jmh'
+apply from: '../versions.gradle'
+
+archivesBaseName = 'stream'
+version = ext.libVersion
+group = 'com.annimon'
+ext.isReleaseVersion = !version.contains("SNAPSHOT")
+
+sourceCompatibility = '1.6'
+targetCompatibility = '1.6'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+if (!hasProperty('mainClass')) {
+    ext.mainClass = ''
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.jetbrains:annotations-java5:20.1.0'
+    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'org.hamcrest:hamcrest-library:2.2'
+    testImplementation project(':streamTest')
+}
+
+//cobertura {
+//    coverageExcludes = ['.*com\\.annimon\\.stream\\.internal\\.Compat.*']
+//}
+
+jmh {
+    benchmarkMode = ['Throughput']
+    fork = 2
+    threads = 2
+    warmupIterations = 3
+    iterations = 5
+}
+
+// maven signing
+if (System.getenv('JITPACK')) {
+    apply from: 'jitpack.gradle'
+}
+if (ext.isReleaseVersion) {
+    apply from: 'signing.gradle'
+}
