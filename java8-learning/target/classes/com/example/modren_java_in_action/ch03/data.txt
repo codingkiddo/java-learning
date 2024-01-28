@@ -1,0 +1,6 @@
+The Optional class provides useful methods to help us work with that API. 
+The important ones for this article are the of(), orElse(), and empty() methods:
+of(T value) returns an instance of an Optional with a value inside
+orElse(T other) returns the value inside an Optional, otherwise returns other
+Finally, empty() returns an empty instance of Optional
+We’ll see these methods in action to build both the code that returns the Optional and the code that uses it.
