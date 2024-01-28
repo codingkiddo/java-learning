@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.baeldung.streams.Java8StreamsUnitTest" time="0.024" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.baeldung.optionaluses.UsesForOptionalUnitTest" time="0.002" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -62,24 +62,6 @@
     <property name="java.class.version" value="52.0"/>
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="checkStreamCount_whenOperationMap_thanCorrect" classname="com.baeldung.streams.Java8StreamsUnitTest" time="0.01">
-    <system-out><![CDATA[<------  checkStreamCount_whenOperationMap_thanCorrect  ------>
-[turbine, pump, turbine, pump]
-[A]
-]]></system-out>
-  </testcase>
-  <testcase name="checkStreamCount_whenOperationFilter_thanCorrect" classname="com.baeldung.streams.Java8StreamsUnitTest" time="0.0">
-    <system-out><![CDATA[<------  checkStreamCount_whenOperationFilter_thanCorrect  ------>
-[One, OneAndOnly, Derek, Change, factory, justBefore, Italy, Italy, Thursday, , ]
-[, ]
-<------  checkStreamCount_whenOperationFilter_thanCorrect  ------>
-]]></system-out>
-  </testcase>
-  <testcase name="test" classname="com.baeldung.streams.Java8StreamsUnitTest" time="0.0"/>
-  <testcase name="checkStreamCount_whenCreating_givenDifferentSources" classname="com.baeldung.streams.Java8StreamsUnitTest" time="0.0">
-    <system-out><![CDATA[[One, OneAndOnly, Derek, Change, factory, justBefore, Italy, Italy, Thursday, , ]
-[One, OneAndOnly, Derek, Change, factory, justBefore, Italy, Italy, Thursday, , ]
-[One, OneAndOnly, Derek, Change, factory, justBefore, Italy, Thursday, ]
-]]></system-out>
-  </testcase>
+  <testcase name="givenNonExistentUserId_whenSearchForUser_thenOptionalShouldBeTreatedProperly" classname="com.baeldung.optionaluses.UsesForOptionalUnitTest" time="0.001"/>
+  <testcase name="givenNonExistentUserId_whenSearchForUser_andNoNullCheck_thenThrowException" classname="com.baeldung.optionaluses.UsesForOptionalUnitTest" time="0.001"/>
 </testsuite>
