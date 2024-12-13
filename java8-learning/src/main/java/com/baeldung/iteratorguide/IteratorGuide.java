@@ -31,7 +31,7 @@ public class IteratorGuide {
 //			String next = iterator.next();
 //			System.out.println(next);
 //		}
-		System.out.println("<--------->");
+		System.out.println("<---------> OK");
 		while (iterator.hasNext()) {
 			String next = iterator.next();
 			System.out.println(next);
