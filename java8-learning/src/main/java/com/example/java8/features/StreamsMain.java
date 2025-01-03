@@ -2,11 +2,14 @@ package com.example.java8.features;
 
 import java.util.OptionalInt;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class StreamsMain {
 
 	
 	public static void main(String[] args) {
+		
+		Stream<String> stream;
 
 		OptionalInt result = IntStream.range(0, 4)
 					.filter(i -> i%2==1)
