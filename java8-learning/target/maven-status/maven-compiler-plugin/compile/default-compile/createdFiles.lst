@@ -1,6 +1,5 @@
 com/example/generics/ListStringTest.class
 com/example/generics/FunctionInterface.class
-com/example/jvm/ref/jmh_generated/JMHBenchmarking_jmhType_B1.class
 com/example/thread/FileSystemExample1.class
 com/example/thread/GetOsInfoExample1.class
 com/example/generics/UnboundedWildcards.class
@@ -9,7 +8,6 @@ com/example/modren_java_in_action/ch01/FilteringApples.class
 com/example/generics/Fruit.class
 com/example/generics/GenericsTest1.class
 com/example/generics/WildcardErrorBad.class
-com/example/jvm/ref/jmh_generated/BenchMark_jmhType_B1.class
 com/example/modren_java_in_action/ch02/FilteringApples.class
 com/example/generics/Cat.class
 com/example/generics/House.class
@@ -32,7 +30,6 @@ com/example/http/JavaHTTPServer.class
 com/example/thread/MyRunnableMain.class
 com/example/modren_java_in_action/ch02/FilteringApples$AppleRedAndHeavyPredicate.class
 com/example/thread/GetRAMInfo2.class
-com/example/jvm/ref/jmh_generated/JMHBenchmarking_jmhType.class
 com/example/jvm/ref/BenchMark.class
 com/example/thread/ProcessorInfoExample3.class
 com/example/modren_java_in_action/ch02/MeaningOfThis.class
@@ -55,7 +52,6 @@ com/example/thread/PrintMain.class
 com/example/statictest/A.class
 com/example/generics/WrapperMain.class
 com/example/thread/GetRAMInfo4.class
-com/example/jvm/ref/jmh_generated/JMHBenchmarking_doExection_jmhTest.class
 com/example/modren_java_in_action/ch02/MeaningOfThis$1.class
 com/example/modren_java_in_action/ch02/FilteringApples$1.class
 com/example/generics/Building.class
@@ -76,25 +72,19 @@ com/example/collection/ComputeIfPresentExample.class
 com/example/ds/MergeSortTest.class
 com/example/thread/GetOsInfoExample2.class
 com/example/jndi/Server.class
-com/example/jvm/ref/jmh_generated/BenchMark_jmhType_B2.class
 com/example/generics/Book.class
 com/example/thread/FileSystemExample2.class
 com/example/thread/CPUMain.class
 META-INF/CompilerHints
-com/example/jvm/ref/jmh_generated/BenchMark_jmhType_B3.class
 com/example/modren_java_in_action/ch02/FilteringApples$AppleColorPredicate.class
-com/example/jvm/ref/jmh_generated/JMHBenchmarking_jmhType_B3.class
 com/example/statictest/Main.class
 com/example/java/generics/and/collections_1st/edition/ch01/Stack.class
 com/example/memcached/CrunchifySpyMemcachedClient.class
 com/example/generics/Wrapper.class
-com/example/jvm/ref/jmh_generated/BenchMark_init_jmhTest.class
 com/example/modren_java_in_action/ch02/FilteringApples$AppleWeightPredicate.class
-com/example/jvm/ref/jmh_generated/BenchMark_jmhType.class
 com/example/generics/Animal.class
 com/example/thread/GetVirtualMemory1.class
 com/example/generics/Dog.class
-com/example/jvm/ref/jmh_generated/JMHBenchmarking_jmhType_B2.class
 com/example/collection/FunctionMain.class
 com/example/generics/Orange.class
 com/example/generics/Generics.class
