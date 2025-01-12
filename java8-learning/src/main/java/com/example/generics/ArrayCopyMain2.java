@@ -53,9 +53,8 @@ public class ArrayCopyMain2 {
 		
 		arraycopy(original, 0, copy, 0,
                 Math.min(original.length, newLength));
-		for(int i=0; i<5; i++) { System.out.println(copy[i]); }
 		
-		return null;
+		return copy;
 	}
 	
 	private static void arraycopy(Object[] src, int srcPos, Object[] dest, int destPos, int length) {
@@ -68,6 +67,9 @@ public class ArrayCopyMain2 {
 
 		Integer[] sourceData = new Integer[5];
 		for(int i=0; i<5; i++) { sourceData[i] = i+100; }
+		
+		Object[] copy =  copyOf(sourceData, sourceData.length, sourceData.getClass());
+		for(int i=0; i<5; i++) { System.out.println(copy[i]); }
 		
 	}
 	
