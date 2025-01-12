@@ -2,10 +2,12 @@ package com.example.generics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 interface MyList<E> {
 	boolean add(E e);
+	boolean addAll(Collection<? extends E> c);
 	E get(int index);
 }
 
@@ -13,6 +15,18 @@ class MyListImpl<E> implements MyList<E> {
 
 	private Object elementData[] = new Object[16];
 	private int size=0;
+
+	@Override
+	public boolean addAll(Collection<? extends E> c) {
+		if  ( ( size+c.size() ) <= 15 ) {
+			for ( int i=0; i<c.size(); i++ ) {
+				elementData[size++] = null;
+			}
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 	@Override
 	public boolean add(E e) {
@@ -22,7 +36,6 @@ class MyListImpl<E> implements MyList<E> {
 		} else {
 			return false;
 		}
-		
 	}
 
 	@SuppressWarnings("unchecked")

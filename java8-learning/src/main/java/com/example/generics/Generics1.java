@@ -14,6 +14,25 @@ public class Generics1 {
 		Integer i = (Integer) list.iterator().next();
 		System.out.println(i);
 		
+		Number n1 = null;
+		Integer i1 = 100;
+		Double d1 = 123.123;
+		
+		n1 = i1;
+		System.out.println("n1 instanceof Integer: " + (n1 instanceof Integer));
+		Integer.compareUnsigned(0, 0);
+		
+		
+		d1.isInfinite();
+		
+		i1.toHexString(0);
+//		Number.compareUnsigned(0, 0);
+		
+		n1 = d1;
+		System.out.println("n1 instanceof Integer: " + (n1 instanceof Double));
+		
+		System.out.println(i1-d1);
+		
 	}
 
 }
