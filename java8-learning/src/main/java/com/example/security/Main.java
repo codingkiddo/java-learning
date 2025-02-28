@@ -11,16 +11,22 @@ public class Main {
     private static final Debug sdebug =
                         Debug.getInstance("properties");
     
+//	private static final sun.security.util.Debug debug =
+//	        sun.security.util.Debug.getInstance
+//	        ("provider", "Provider");
+	
 	public static void main(String[] args) {
 
-		for(Provider provider : Security.getProviders()) {
-			
-			for ( Provider.Service service : provider.getServices() ) {
-				
-				System.out.println( service.getClassName() + ":" + service.getAlgorithm() );
-				
-			}
-		}
+		System.out.println(sdebug.hashCode());
+		
+//		for(Provider provider : Security.getProviders()) {
+//			
+//			for ( Provider.Service service : provider.getServices() ) {
+//				
+//				System.out.println( service.getClassName() + ":" + service.getAlgorithm() );
+//				
+//			}
+//		}
 		
 	}
 }
