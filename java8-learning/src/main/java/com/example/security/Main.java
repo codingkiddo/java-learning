@@ -17,16 +17,13 @@ public class Main {
 	
 	public static void main(String[] args) {
 
-		System.out.println(sdebug.hashCode());
+//		System.out.println(sdebug.hashCode());
 		
-//		for(Provider provider : Security.getProviders()) {
-//			
-//			for ( Provider.Service service : provider.getServices() ) {
-//				
-//				System.out.println( service.getClassName() + ":" + service.getAlgorithm() );
-//				
-//			}
-//		}
+		for(Provider provider : Security.getProviders()) {
+			for ( Provider.Service service : provider.getServices() ) {
+				System.out.println( service.getClassName() + ":" + service.getAlgorithm() );
+			}
+		}
 		
 	}
 }
