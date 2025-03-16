@@ -1,5 +1,7 @@
 package com.leetcode.medium;
 
+import java.util.Arrays;
+
 public class MinimumTimeToRepairCars2594 {
 	public boolean solve(long res, int[] ranks, int cars) {
         long cnt = 0;
