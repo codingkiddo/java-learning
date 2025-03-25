@@ -1,5 +1,7 @@
 package com.leetcode.medium;
 
+import java.util.Arrays;
+
 public class CheckIfGridCanBeCutIntoSections3394 {
 	public boolean checkValidCuts(int n, int[][] rectangles) {
         int[][] xIntervals = new int[rectangles.length][2];
