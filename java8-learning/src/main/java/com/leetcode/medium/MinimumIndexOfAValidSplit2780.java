@@ -3,12 +3,7 @@ package com.leetcode.medium;
 import java.util.List;
 
 public class MinimumIndexOfAValidSplit2780 {
-
-}
-
-
-class Solution {
-    public int minimumIndex(List<Integer> nums) {
+	public int minimumIndex(List<Integer> nums) {
         int dominant = findDominantElement(nums);
         if (dominant == -1) return -1;
 
@@ -61,3 +56,5 @@ class Solution {
         return (totalCount > arr.size() / 2) ? candidate : -1;
     }
 }
+
+
