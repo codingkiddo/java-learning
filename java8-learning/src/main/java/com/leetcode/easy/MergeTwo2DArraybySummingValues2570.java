@@ -1,5 +1,8 @@
 package com.leetcode.easy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MergeTwo2DArraybySummingValues2570 {
 	public int[][] mergeArrays(int[][] nums1, int[][] nums2) {
         // Initialize pointers for both arrays

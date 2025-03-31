@@ -1,8 +1,6 @@
 package com.example.generics;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 
@@ -36,6 +34,6 @@ public class MyListMain2 {
 		System.out.println(nums);
 		
 		List<? extends String> names = new ArrayList<>();
-		names.add("VINOD");
+//		names.add("VINOD");
 	}
 }

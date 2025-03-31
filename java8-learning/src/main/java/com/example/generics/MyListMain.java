@@ -79,6 +79,6 @@ public class MyListMain {
 		System.out.println(nums);
 		
 		List<? extends String> names = new ArrayList<>();
-		names.add("VINOD");
+//		names.add("VINOD");
 	}
 }
