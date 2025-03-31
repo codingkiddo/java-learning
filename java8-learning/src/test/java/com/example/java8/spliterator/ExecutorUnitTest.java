@@ -5,7 +5,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Spliterator;
+import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -43,4 +48,64 @@ public class ExecutorUnitTest {
         
         assertThat(sum.get()).isEqualTo(15);
 	}
+	
+	@Test
+    public void givenAStreamOfIntegers_whenProcessedInParallelWithCustomSpliterator_countProducesRightOutput() {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+
+        CustomSpliterator customSpliterator = new CustomSpliterator(numbers);
+
+        // Create a ForkJoinPool for parallel processing
+        ForkJoinPool forkJoinPool = ForkJoinPool.commonPool();
+        
+        AtomicInteger sum = new AtomicInteger(0);
+        
+        forkJoinPool.submit( () -> {
+        	Stream<Integer> parallelStream = StreamSupport.stream(customSpliterator, true);
+        	parallelStream.forEach(sum::addAndGet);
+        }).join();
+        assertThat(sum.get()).isEqualTo(15);
+
+	}
+	
+	@Test
+    public void givenAStreamOfArticles_whenProcessedSequentiallyWithSpliterator_ProducessRightOutput() {
+		List<Article> articles = Stream.generate(() -> new Article("Java"))
+	            .limit(35000)
+	            .collect(Collectors.toList());
+		
+		Spliterator<Article> spliterator = articles.spliterator();
+		while(spliterator.tryAdvance(article -> article.setName(article.getName().concat("- published in medium !!!!"))));
+		
+		articles.forEach(article -> assertThat(article.getName()).isEqualTo("Java- published in medium !!!!") );
+	}
+	
+	@Test
+    public void givenAStreamOfArticle_whenProcessedUsingTrySplit_thenSplitIntoEqualHalf() {
+        List<Article> articles = Stream.generate(() -> new Article("Java"))
+            .limit(35000)
+            .collect(Collectors.toList());
+
+        Spliterator<Article> split1 = articles.spliterator();
+        Spliterator<Article> split2 = split1.trySplit();
+
+        System.out.println("Size: " + split1.estimateSize());
+        System.out.println("Characteristics: " + split1.characteristics());
+
+        List<Article> articlesListOne = new ArrayList<>();
+        List<Article> articlesListTwo = new ArrayList<>();
+
+        split1.forEachRemaining(articlesListOne::add);
+        split2.forEachRemaining(articlesListTwo::add);
+
+        assertThat(articlesListOne.size()).isEqualTo(17500);
+        assertThat(articlesListTwo.size()).isEqualTo(17500);
+
+        assertThat(articlesListOne).doesNotContainAnyElementsOf(articlesListTwo);
+    }
 }
