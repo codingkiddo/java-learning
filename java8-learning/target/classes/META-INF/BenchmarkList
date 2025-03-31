@@ -1,2 +1,0 @@
-JMH S 29 com.example.jvm.ref.BenchMark S 56 com.example.jvm.ref.jmh_generated.BenchMark_init_jmhTest S 4 init S 10 Throughput E A 1 1 1 E E E E E E E I 1 1 I 1 1 E E E E E E E E 
-JMH S 35 com.example.jvm.ref.JMHBenchmarking S 68 com.example.jvm.ref.jmh_generated.JMHBenchmarking_doExection_jmhTest S 10 doExection S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E E E E 

@@ -56,7 +56,7 @@ public class Generics5 {
 		
 		List<? super Integer> nums = new ArrayList<Number>();
 		Number n = 200;
-		nums.add(n);
+//		nums.add(n);
 		
 	}
 
