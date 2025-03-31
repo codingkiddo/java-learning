@@ -39,14 +39,12 @@ public class CustomSpliterator implements Spliterator<Integer> {
 
 	@Override
 	public long estimateSize() {
-		// TODO Auto-generated method stub
-		return 0;
+		return elements.size()-currentIndex;
 	}
 
 	@Override
 	public int characteristics() {
-		// TODO Auto-generated method stub
-		return 0;
+		return ORDERED | SIZED | SUBSIZED | NONNULL;
 	}
 
 }
