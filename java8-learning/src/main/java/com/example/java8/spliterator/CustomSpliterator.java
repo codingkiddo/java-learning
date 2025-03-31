@@ -26,8 +26,15 @@ public class CustomSpliterator implements Spliterator<Integer> {
 
 	@Override
 	public Spliterator<Integer> trySplit() {
-		// TODO Auto-generated method stub
-		return null;
+		int currentSize = elements.size() - this.currentIndex;
+		if (currentSize < 2) {
+			return null;
+		}
+		
+		int splitIndex = currentIndex + currentSize/2;
+		CustomSpliterator newSpliterator = new CustomSpliterator(elements.subList(currentIndex, splitIndex));
+		currentIndex = splitIndex;
+		return newSpliterator;
 	}
 
 	@Override
