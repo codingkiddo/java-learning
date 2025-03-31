@@ -33,79 +33,77 @@ public class ExecutorUnitTest {
 	}
 
 	@Test
-    public void givenAStreamOfIntegers_whenProcessedSequentialCustomSpliterator_countProducesRightOutput() {
-        List<Integer> numbers = new ArrayList<>();
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(3);
-        numbers.add(4);
-        numbers.add(5);
-        
-        CustomSpliterator customSpliterator = new CustomSpliterator(numbers);
-        AtomicInteger sum = new AtomicInteger();
-        
-        customSpliterator.forEachRemaining(sum::addAndGet);
-        
-        assertThat(sum.get()).isEqualTo(15);
+	public void givenAStreamOfIntegers_whenProcessedSequentialCustomSpliterator_countProducesRightOutput() {
+		List<Integer> numbers = new ArrayList<>();
+		numbers.add(1);
+		numbers.add(2);
+		numbers.add(3);
+		numbers.add(4);
+		numbers.add(5);
+
+		CustomSpliterator customSpliterator = new CustomSpliterator(numbers);
+		AtomicInteger sum = new AtomicInteger();
+
+		customSpliterator.forEachRemaining(sum::addAndGet);
+
+		assertThat(sum.get()).isEqualTo(15);
 	}
-	
+
 	@Test
-    public void givenAStreamOfIntegers_whenProcessedInParallelWithCustomSpliterator_countProducesRightOutput() {
-        List<Integer> numbers = new ArrayList<>();
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(3);
-        numbers.add(4);
-        numbers.add(5);
+	public void givenAStreamOfIntegers_whenProcessedInParallelWithCustomSpliterator_countProducesRightOutput() {
+		List<Integer> numbers = new ArrayList<>();
+		numbers.add(1);
+		numbers.add(2);
+		numbers.add(3);
+		numbers.add(4);
+		numbers.add(5);
 
-        CustomSpliterator customSpliterator = new CustomSpliterator(numbers);
+		CustomSpliterator customSpliterator = new CustomSpliterator(numbers);
 
-        // Create a ForkJoinPool for parallel processing
-        ForkJoinPool forkJoinPool = ForkJoinPool.commonPool();
-        
-        AtomicInteger sum = new AtomicInteger(0);
-        
-        forkJoinPool.submit( () -> {
-        	Stream<Integer> parallelStream = StreamSupport.stream(customSpliterator, true);
-        	parallelStream.forEach(sum::addAndGet);
-        }).join();
-        assertThat(sum.get()).isEqualTo(15);
+		// Create a ForkJoinPool for parallel processing
+		ForkJoinPool forkJoinPool = ForkJoinPool.commonPool();
+
+		AtomicInteger sum = new AtomicInteger(0);
+
+		forkJoinPool.submit(() -> {
+			Stream<Integer> parallelStream = StreamSupport.stream(customSpliterator, true);
+			parallelStream.forEach(sum::addAndGet);
+		}).join();
+		assertThat(sum.get()).isEqualTo(15);
 
 	}
-	
+
 	@Test
-    public void givenAStreamOfArticles_whenProcessedSequentiallyWithSpliterator_ProducessRightOutput() {
-		List<Article> articles = Stream.generate(() -> new Article("Java"))
-	            .limit(35000)
-	            .collect(Collectors.toList());
-		
+	public void givenAStreamOfArticles_whenProcessedSequentiallyWithSpliterator_ProducessRightOutput() {
+		List<Article> articles = Stream.generate(() -> new Article("Java")).limit(35000).collect(Collectors.toList());
+
 		Spliterator<Article> spliterator = articles.spliterator();
-		while(spliterator.tryAdvance(article -> article.setName(article.getName().concat("- published in medium !!!!"))));
-		
-		articles.forEach(article -> assertThat(article.getName()).isEqualTo("Java- published in medium !!!!") );
+		while (spliterator
+				.tryAdvance(article -> article.setName(article.getName().concat("- published in medium !!!!"))))
+			;
+
+		articles.forEach(article -> assertThat(article.getName()).isEqualTo("Java- published in medium !!!!"));
 	}
-	
+
 	@Test
-    public void givenAStreamOfArticle_whenProcessedUsingTrySplit_thenSplitIntoEqualHalf() {
-        List<Article> articles = Stream.generate(() -> new Article("Java"))
-            .limit(35000)
-            .collect(Collectors.toList());
+	public void givenAStreamOfArticle_whenProcessedUsingTrySplit_thenSplitIntoEqualHalf() {
+		List<Article> articles = Stream.generate(() -> new Article("Java")).limit(35000).collect(Collectors.toList());
 
-        Spliterator<Article> split1 = articles.spliterator();
-        Spliterator<Article> split2 = split1.trySplit();
+		Spliterator<Article> split1 = articles.spliterator();
+		Spliterator<Article> split2 = split1.trySplit();
 
-        System.out.println("Size: " + split1.estimateSize());
-        System.out.println("Characteristics: " + split1.characteristics());
+		System.out.println("Size: " + split1.estimateSize());
+		System.out.println("Characteristics: " + split1.characteristics());
 
-        List<Article> articlesListOne = new ArrayList<>();
-        List<Article> articlesListTwo = new ArrayList<>();
+		List<Article> articlesListOne = new ArrayList<>();
+		List<Article> articlesListTwo = new ArrayList<>();
 
-        split1.forEachRemaining(articlesListOne::add);
-        split2.forEachRemaining(articlesListTwo::add);
+		split1.forEachRemaining(articlesListOne::add);
+		split2.forEachRemaining(articlesListTwo::add);
 
-        assertThat(articlesListOne.size()).isEqualTo(17500);
-        assertThat(articlesListTwo.size()).isEqualTo(17500);
+		assertThat(articlesListOne.size()).isEqualTo(17500);
+		assertThat(articlesListTwo.size()).isEqualTo(17500);
 
-        assertThat(articlesListOne).doesNotContainAnyElementsOf(articlesListTwo);
-    }
+		assertThat(articlesListOne).doesNotContainAnyElementsOf(articlesListTwo);
+	}
 }
