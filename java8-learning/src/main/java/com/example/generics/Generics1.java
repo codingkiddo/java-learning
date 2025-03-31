@@ -1,5 +1,6 @@
 package com.example.generics;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -32,6 +33,19 @@ public class Generics1 {
 		System.out.println("n1 instanceof Integer: " + (n1 instanceof Double));
 		
 		System.out.println(i1-d1);
+		
+//		List<Integer> ints = new ArrayList<>();
+//		ints.add(1);
+//		
+//		List<? extends Number> nums = new ArrayList<>();
+//		nums = ints;
+//		nums.add(1.1);
+		
+		List<? super Integer> numsSuper = new ArrayList<>();
+		List<Integer> ints = new ArrayList<>();
+		ints.add(1);
+		numsSuper = ints;
+		numsSuper.add(100);
 		
 	}
 
