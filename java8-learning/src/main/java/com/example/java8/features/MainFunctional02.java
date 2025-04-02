@@ -20,6 +20,9 @@ public class MainFunctional02 {
 //		The following code doesn't compile. The target type is must be funtional interface
 //		Object o = () -> System.out.println("Hello !!"); 
 		Object o = r;
+		
+		execute((Runnable)() -> System.out.println("Runnable"));
+		execute( (Action) () -> System.out.println("Action"));
 	}
 
 //	public static <T, R> List<R> map(List<T> list) {
@@ -40,5 +43,13 @@ public class MainFunctional02 {
 			result.add( f.apply(t) );
 		}
 		return result;
+	}
+	
+	public static void execute(Runnable runnable) {
+		runnable.run();
+	}
+	
+	public static void execute(Action action) {
+		action.act();
 	}
 }
