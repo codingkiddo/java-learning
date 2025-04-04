@@ -1,5 +1,6 @@
 package com.leetcode.medium;
 
+import com.example.ds.TreeNode;
 
 public class LowestCommonAncestorOfDeepestLeaves1123 {
 	TreeNode res;
@@ -16,8 +17,8 @@ public class LowestCommonAncestorOfDeepestLeaves1123 {
             return depth;
         }
 
-        int left = dfs(node.left, depth + 1);
-        int right = dfs(node.right, depth + 1);
+        int left = dfs(node.getLeft(), depth + 1);
+        int right = dfs(node.getRight(), depth + 1);
         if (left == right && left == maxDepth)
             res = node;
         return Math.max(left, right);
