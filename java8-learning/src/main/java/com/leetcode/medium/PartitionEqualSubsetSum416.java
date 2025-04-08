@@ -1,7 +1,13 @@
 package com.leetcode.medium;
 
 public class PartitionEqualSubsetSum416 {
+	
+	
+	
 	public boolean canPartition(int[] nums) {
+		
+		Integer.toBinaryString(100);
+		
         int totalSum = 0;
         for (int num : nums) totalSum += num;
         if (totalSum % 2 != 0) return false;
