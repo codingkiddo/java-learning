@@ -30,23 +30,41 @@ public class Generics1 {
 //		Number.compareUnsigned(0, 0);
 		
 		n1 = d1;
-		System.out.println("n1 instanceof Integer: " + (n1 instanceof Double));
+		System.out.println("n1 instanceof Double: " + (n1 instanceof Double));
 		
 		System.out.println(i1-d1);
+		
+//		Exception in thread "main" java.lang.ClassCastException: 
+//		class java.lang.Double cannot be cast to class java.lang.Integer 
+//		(java.lang.Double and java.lang.Integer are in module java.base of loader 'bootstrap')
+//		at com.example.generics.Generics1.main(Generics1.java:37)
+//		i1 = (Integer) n1;
 		
 //		List<Integer> ints = new ArrayList<>();
 //		ints.add(1);
 //		
-//		List<? extends Number> nums = new ArrayList<>();
+		List<Number> nums = new ArrayList<>();
 //		nums = ints;
-//		nums.add(1.1);
-		
-		List<? super Integer> numsSuper = new ArrayList<>();
+		nums.add(1.1);
+		Number n2 = 1.1;
+		List<? extends Number> numsSuper = new ArrayList<>();
+//		numsSuper.add((Number)n2);
+		numsSuper.add(n2);
 		List<Integer> ints = new ArrayList<>();
 		ints.add(1);
-		numsSuper = ints;
-		numsSuper.add(100);
 		
+		numsSuper = ints;
+		numsSuper.stream().forEach(n -> System.out.println(n.getClass()));
+//		numsSuper.add(100);
+		
+		List<? super Integer> parent = new ArrayList<>();
+		List<Number> nums2 = new ArrayList<>();
+		nums2.add(1);
+		nums2.add(1.1);
+		parent = nums2;
+//		parent.add(1.1);
+		
+		parent.stream().forEach(n -> System.out.println(n.getClass()));
 	}
 
 }
