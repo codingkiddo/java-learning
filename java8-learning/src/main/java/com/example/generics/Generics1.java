@@ -49,7 +49,7 @@ public class Generics1 {
 		Number n2 = 1.1;
 		List<? extends Number> numsSuper = new ArrayList<>();
 //		numsSuper.add((Number)n2);
-		numsSuper.add(n2);
+//		numsSuper.add(n2);
 		List<Integer> ints = new ArrayList<>();
 		ints.add(1);
 		
