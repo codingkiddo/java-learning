@@ -1,6 +1,7 @@
 package com.example.generics;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -65,6 +66,22 @@ public class Generics1 {
 //		parent.add(1.1);
 		
 		parent.stream().forEach(n -> System.out.println(n.getClass()));
+		
+		
+		Object obj = "one";
+		List<Object> objs = Arrays.asList("one", 1, 2, 2.2, 4L, 4);
+		List<Integer> ints2 = Arrays.asList(2, 4);
+		
+		List<? extends Object> objs2 = ints2;
+		List<?> objs3 = ints2;
+		
+		System.out.println(objs.contains(obj));
+		System.out.println(objs.containsAll(ints2));
+		System.out.println(objs.containsAll(objs2));
+		System.out.println(objs.containsAll(objs3));
+		
+		System.out.println(ints2.contains(obj));
+		System.out.println(ints2.containsAll(objs));
 	}
 
 }

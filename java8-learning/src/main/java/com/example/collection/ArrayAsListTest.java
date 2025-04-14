@@ -1,6 +1,7 @@
 package com.example.collection;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class ArrayAsListTest {
@@ -17,6 +18,8 @@ public class ArrayAsListTest {
 		System.out.println(intList.contains(1));
 		
 		System.out.println(intList.contains(intArray));
+		
+		Collections.synchronizedMap(null);
 		
 	}
 
