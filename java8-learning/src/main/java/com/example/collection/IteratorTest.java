@@ -23,7 +23,7 @@ public class IteratorTest {
 		System.out.println("From Java 8 - 1");
 		names.forEach(name -> System.out.println(name.length()));
 		System.out.println("From Java 8 - 2");
-		names.forEach(System.out.println(String::length));
+//		names.forEach(System.out.println(String::length));
 	}
 
 }
