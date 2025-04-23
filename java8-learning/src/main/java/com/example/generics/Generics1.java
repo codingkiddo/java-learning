@@ -63,7 +63,7 @@ public class Generics1 {
 		nums2.add(1);
 		nums2.add(1.1);
 		parent = nums2;
-//		parent.add(1.1);
+		parent.add(1);
 		
 		parent.stream().forEach(n -> System.out.println(n.getClass()));
 		

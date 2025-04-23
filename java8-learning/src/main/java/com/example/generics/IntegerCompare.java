@@ -1,5 +1,9 @@
 package com.example.generics;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class IntegerCompare {
 
 	public static void main(String[] rgs) {
@@ -14,5 +18,9 @@ public class IntegerCompare {
 		
 		System.out.println(n1 == n2);
 		
+
+		List<Building> buildings = new ArrayList<>();
+		buildings.add(new Building());
+		Collections.sort(buildings);
 	}
 }
