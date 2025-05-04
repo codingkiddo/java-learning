@@ -13,6 +13,6 @@ public class GenericsBasics1 {
 		System.out.println("s1: " + s1);
 		
 		
-	}
+	} 
 
 }
