@@ -4,7 +4,7 @@ public class _C {
 
 	private static int $;
 	
-	public static void main(String[] args) {
+	public static final void main(String[] args) {
 //		The local variable a_b may not have been initialized
 		String a_b = null;
 		System.out.println($);
