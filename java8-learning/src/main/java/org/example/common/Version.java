@@ -13,7 +13,7 @@ public class Version {
     
     
     static {
-    	try (InputStream is = Version.class.getClassLoader().getResourceAsStream(NAME)) {
+    	try (InputStream is = Version.class.getResourceAsStream(NAME)) {
     		Properties properties = new Properties();
     		properties.load(is);
     		Version.VERSION = properties.getProperty("version");
