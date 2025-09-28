@@ -1,0 +1,10 @@
+com/codingkiddo/sakila/streams/SakilaStreams$Actor.class
+com/codingkiddo/sakila/streams/SakilaStreams$Category.class
+com/codingkiddo/sakila/streams/SakilaStreams$Film.class
+com/codingkiddo/sakila/streams/SakilaStreams$1.class
+com/codingkiddo/sakila/streams/SakilaStreams$RowMapper.class
+com/codingkiddo/sakila/streams/SakilaStreams$RentalRow.class
+com/codingkiddo/sakila/streams/SakilaStreams$Customer.class
+com/codingkiddo/sakila/streams/SakilaStreams$FilmCategory.class
+com/codingkiddo/sakila/streams/SakilaStreams$FilmActor.class
+com/codingkiddo/sakila/streams/SakilaStreams.class
