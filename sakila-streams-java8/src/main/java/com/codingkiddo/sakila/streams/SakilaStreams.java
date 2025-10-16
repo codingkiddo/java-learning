@@ -156,7 +156,7 @@ public class SakilaStreams {
 		String url = System.getProperty("DB_URL", System.getenv().getOrDefault("DB_URL",
 				"jdbc:mysql://localhost:3306/sakila?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&useCursorFetch=true&defaultFetchSize=500"));
 		String user = System.getProperty("DB_USER", System.getenv().getOrDefault("DB_USER", "root"));
-		String pass = System.getProperty("DB_PASS", System.getenv().getOrDefault("DB_PASS", "root"));
+		String pass = System.getProperty("DB_PASS", System.getenv().getOrDefault("DB_PASS", "12345678"));
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		return DriverManager.getConnection(url, user, pass);
 	}
