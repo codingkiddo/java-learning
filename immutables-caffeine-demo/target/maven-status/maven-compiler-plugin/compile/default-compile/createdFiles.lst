@@ -1,0 +1,14 @@
+com/codingkiddo/immutablesdemo/repo/DeviceRepository.class
+com/codingkiddo/immutablesdemo/domain/Device.class
+com/codingkiddo/immutablesdemo/domain/ImmutableDeviceQuery$Builder.class
+com/codingkiddo/immutablesdemo/domain/ImmutableDevice.class
+com/codingkiddo/immutablesdemo/domain/ImmutableDeviceQuery.class
+com/codingkiddo/immutablesdemo/domain/ImmutableDevice$Builder.class
+com/codingkiddo/immutablesdemo/web/DeviceController.class
+com/codingkiddo/immutablesdemo/service/DeviceService.class
+com/codingkiddo/immutablesdemo/config/CacheConfig.class
+com/codingkiddo/immutablesdemo/domain/ImmutableDeviceQuery$Json.class
+com/codingkiddo/immutablesdemo/domain/DeviceQuery.class
+com/codingkiddo/immutablesdemo/domain/ImmutableDevice$InitShim.class
+com/codingkiddo/immutablesdemo/ImmutablesDemoApplication.class
+com/codingkiddo/immutablesdemo/domain/ImmutableDevice$Json.class
