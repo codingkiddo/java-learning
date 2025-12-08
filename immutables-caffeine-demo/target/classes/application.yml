@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: immutables-caffeine-demo
+  cache:
+    type: caffeine
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,caches

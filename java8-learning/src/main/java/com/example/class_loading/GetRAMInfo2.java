@@ -15,6 +15,7 @@ public class GetRAMInfo2 {
         long usedMemory = globalMemory.getTotal() - globalMemory.getAvailable();
         
         System.out.println(hardware.getProcessor());
+        hardware.getProcessor();
 
         System.out.println("Total memory: " + FormatUtil.formatBytes(globalMemory.getTotal()));
         System.out.println("Available memory: " + FormatUtil.formatBytes(globalMemory.getAvailable()));
