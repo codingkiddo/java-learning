@@ -11,13 +11,13 @@ public class HandlingNulls {
 		List<? super Integer> ints2 = new ArrayList<Number>();
 		List<? super Integer> ints3 = new ArrayList<Object>();
 		
-		List<? super Integer> ints4 = new ArrayList<String>();
+//		List<? super Integer> ints4 = new ArrayList<String>();
 		
 		
 		
 		List<? extends Number> nums1 = new ArrayList<Number>();
 		List<? extends Number> nums2 = new ArrayList<Integer>();
-		List<? extends Number> nums3 = new ArrayList<String>();
+//		List<? extends Number> nums3 = new ArrayList<String>();
 		
 	}
 
