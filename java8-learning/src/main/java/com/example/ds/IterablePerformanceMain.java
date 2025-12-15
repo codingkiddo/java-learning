@@ -14,15 +14,17 @@ public class IterablePerformanceMain {
 		
 		System.out.println(list.isEmpty());
 		list.add(1);
+		list.add(2);
 		System.out.println(list.isEmpty());
 		System.out.println(list);
 		for(Integer i : list) {
 			System.out.println(i);
 		}
 		
-		for(int i=0; i<list.size(); i++) {
-			System.out.println(list.get(i));
-		}
+//		int size = list.size();
+//		for(int i=0; i<size; i++) {
+//			System.out.println(list.get(i));
+//		}
 	}
 
 }
