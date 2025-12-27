@@ -45,8 +45,11 @@ public class StreamsMain {
 	private static <T> void display(Consumer<? super T> action) {
 		Type[] types =  action.getClass().getGenericInterfaces();
 		for ( Type t : types) {
-			if ( t instanceof ParameterizedType pt && 
-					pt.getRawType() == Consumer.class ) {
+			if ( t instanceof ParameterizedType pt 
+					&& 
+						pt.getRawType() == Consumer.class ) {
+				
+				System.out.println(pt.getActualTypeArguments()[0]);
 				
 			}
 		}
