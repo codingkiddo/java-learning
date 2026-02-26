@@ -1,19 +1,19 @@
 package com.example.collection;
 
+import java.io.*;
 import javax.net.SocketFactory;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
-import java.io.*;
 
 public class JavaTLSClientExample {
 
-	static void startClient(String host, int port) throws IOException {
+    static void startClient(String host, int port) throws IOException {
 
         SocketFactory factory = SSLSocketFactory.getDefault();
 
         try (SSLSocket socket = (SSLSocket) factory.createSocket(host, port)) {
-            socket.setEnabledCipherSuites(new String[] { "TLS_AES_128_GCM_SHA256" });
-            socket.setEnabledProtocols(new String[] { "TLSv1.3" });
+            socket.setEnabledCipherSuites(new String[] {"TLS_AES_128_GCM_SHA256"});
+            socket.setEnabledProtocols(new String[] {"TLSv1.3"});
             socket.startHandshake();
             InputStream is = new BufferedInputStream(socket.getInputStream());
             String message = "Hello World Message";
@@ -33,6 +33,5 @@ public class JavaTLSClientExample {
     public static void main(String[] args) throws IOException {
 
         startClient("google.com", 8443);
-    
-	}
+    }
 }

@@ -10,7 +10,7 @@ public class GetRAMInfo2 {
         SystemInfo systemInfo = new SystemInfo();
         HardwareAbstractionLayer hardware = systemInfo.getHardware();
         GlobalMemory globalMemory = hardware.getMemory();
-        
+
         long usedMemory = globalMemory.getTotal() - globalMemory.getAvailable();
 
         System.out.println("Total memory: " + FormatUtil.formatBytes(globalMemory.getTotal()));

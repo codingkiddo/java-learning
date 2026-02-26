@@ -8,13 +8,14 @@ import java.util.stream.Collectors;
 
 public class GroupByOccurrenceExample {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		List<String> items = Arrays.asList("apple", "apple", "banana", "apple", "orange", "banana", "papaya");
+        List<String> items =
+                Arrays.asList("apple", "apple", "banana", "apple", "orange", "banana", "papaya");
 
-		Map<String, Long> counts = items.stream()
-				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-		
-		System.out.println(counts);
-	}
+        Map<String, Long> counts =
+                items.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        System.out.println(counts);
+    }
 }
