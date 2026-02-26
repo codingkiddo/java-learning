@@ -1,0 +1,37 @@
+{
+  "period_duration": "PT24H",
+  "page": 1,
+  "search_id": "",
+  "periods": [
+    {
+      "period": "2026-01-23T12:00:00.000Z",
+      "website_blocks": [
+        {
+          "domain": "gum.criteo.com",
+          "count": 10,
+          "categories": ["category:shopping"]
+        },
+        {
+          "domain": "ssp-sync.criteo.com",
+          "count": 8,
+          "categories": ["category:shopping"]
+        },
+        {
+          "domain": "www.amazon.com",
+          "count": 14,
+          "categories": ["category:shopping"]
+        },
+        {
+          "domain": "www.temu.com",
+          "count": 1,
+          "categories": ["category:shopping"]
+        },
+        {
+          "domain": "dis.criteo.com",
+          "count": 2,
+          "categories": ["category:shopping"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,3 @@
 package com.example.reactor;
 
-public class StatelessGenerate {
-
-}
+public class StatelessGenerate {}
