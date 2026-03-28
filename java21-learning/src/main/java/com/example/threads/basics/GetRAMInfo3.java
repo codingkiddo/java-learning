@@ -1,15 +1,19 @@
+package com.example.threads.basics;
+import java.util.List;
 import oshi.SystemInfo;
 import oshi.hardware.GlobalMemory;
 import oshi.hardware.HardwareAbstractionLayer;
-import oshi.hardware.VirtualMemory;
+import oshi.hardware.PhysicalMemory;
 
-public class GetVirtualMemory1 {
+public class GetRAMInfo3 {
     public static void main(String... args) {
         SystemInfo systemInfo = new SystemInfo();
         HardwareAbstractionLayer hardware = systemInfo.getHardware();
         GlobalMemory globalMemory = hardware.getMemory();
-        VirtualMemory virtualMemory = globalMemory.getVirtualMemory();
 
-        System.out.println(virtualMemory.toString());
+        List<PhysicalMemory> physicalMemories = globalMemory.getPhysicalMemory();
+        for (PhysicalMemory physicalMemory : physicalMemories) {
+            System.out.println(physicalMemory.toString());
+        }
     }
 }
