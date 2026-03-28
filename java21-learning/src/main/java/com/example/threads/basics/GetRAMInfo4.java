@@ -1,3 +1,4 @@
+package com.example.threads.basics;
 import java.util.List;
 import oshi.SystemInfo;
 import oshi.hardware.GlobalMemory;
