@@ -13,7 +13,7 @@ public class CPUDemo {
         
         long start = System.currentTimeMillis();
         
-        long sum = IntStream.rangeClosed(1, 1000).parallel()
+        long sum = IntStream.rangeClosed(1, 10_00_000).parallel()
         		.mapToLong(i -> {
         			System.out.println("Task " + i + " running on " + Thread.currentThread().getName());
         			busyWork();
