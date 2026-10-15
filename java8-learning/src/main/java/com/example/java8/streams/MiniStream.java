@@ -6,7 +6,7 @@ import java.util.function.Consumer;
 
 public class MiniStream<T> {
 
-	private final Iterable<T> source;
+	private final T source;
 	private boolean consumed;
 
 	private MiniStream(Iterable<T> source) {
