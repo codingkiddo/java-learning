@@ -48,6 +48,9 @@ public class StringStreamMain {
 
 //		Consumer<? extends Object> consumer2 = value -> System.out.println(value); // Valid
 //		consumer2.accept("A");
+		
+		
+		Stream<Double> numbers = Stream.generate(Math::random);
 	}
 
 }
